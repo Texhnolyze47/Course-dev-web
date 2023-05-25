@@ -8,7 +8,7 @@ con nosotros. Tenemos los mejores mentores en todo el mundo.</p>
 
             <button className="bg-stone-950 text-zinc-50 hover:bg-indigo-950 p-2 my-4">Empieza aqui</button>
             </div>
-            <img src="../../public/images/hero_image_black.svg" alt="" className="w-2/4"/>
+            <img src="src/assets/images/hero_image_black.svg" alt="" className="w-2/4"/>
         </header>
     )
 }
