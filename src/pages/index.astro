@@ -2,9 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 
 // Components
-import Navbar from '../components/Navbar.jsx';
+import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.jsx';
 import Partners from '../components/Partners.jsx';
+import Courses from '../components/CourseSlider.jsx';
+import Mentors from '../components/ListMentors.jsx';
+import ChooseUs from '../components/ChooseUs.jsx';
+import Footer from '../components/Footer.jsx';
+import CardList from '../components/CardList.jsx';
+import Card from '../components/Card.jsx';
 ---
 
 <Layout title="Course-dev">
@@ -12,6 +18,11 @@ import Partners from '../components/Partners.jsx';
 		<Navbar />
 		<Hero />
 		<Partners />
+		<CardList client:load />
+		<Mentors />
+		<ChooseUs />
+		<Footer />
+		
 	</main>
 </Layout>
 
