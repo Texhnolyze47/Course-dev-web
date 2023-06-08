@@ -1,5 +1,5 @@
 import { createSignal } from 'solid-js';
-import  imageUrl  from '../assets/images/courses/course_image_1.jpg'
+import  imageUrl  from '../assets/images/courses/course_image_1.png'
 export default function Card({ title, description, category }) {
 
     const handleClick = () => {
@@ -7,8 +7,8 @@ export default function Card({ title, description, category }) {
       };
     
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <img className="h-48 w-full object-cover" src={imageUrl} alt={title} />
+    <div className="flex flex-col bg-white rounded-lg shadow-md overflow-hidden">
+      <img className="h-48 object-cover" src={imageUrl} alt={title} />
       <div className="p-4">
         <h2 className="text-lg font-medium text-gray-900">{title}</h2>
         <p className="text-gray-600">{description}</p>
