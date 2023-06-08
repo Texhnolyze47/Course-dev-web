@@ -1,12 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Navbar from '../components/Navbar.astro'
-import GridCursos from '../components/cursos/grid-courses.jsx'
+import GridCursos from '../components/courses/GridCourses.jsx'
 ---
 
 <Layout title="Cursos">
     <main>
         <Navbar />
-        <GridCursos />
+        <GridCursos client:load />
     </main>
 </Layout>

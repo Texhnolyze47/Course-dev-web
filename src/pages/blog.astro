@@ -2,12 +2,19 @@
 import Layout from '../layouts/Layout.astro'
 // Component
 import Navbar from '../components/Navbar.astro'
-
+import BlogCard from '../components/blogs/BlogCard.jsx'
 ---
 
 <Layout title="blog">
     <main>
         <Navbar />
-        <h1>blog</h1>
+        <div class=" p-4">
+            <h1 class="text-5xl p-4">blog</h1>
+            <h3>Articulos sobre nuestra plataforma y desarrollo web</h3>
+            <hr class="my-4" />
+
+        </div>
+        <BlogCard />
+
     </main>
 </Layout>
