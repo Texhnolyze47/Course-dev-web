@@ -2,11 +2,15 @@
 import Layout from '../layouts/Layout.astro'
 // Components
 import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.jsx'
+import Pricing from '../components/pricing/Pricing.jsx'
 ---
 
 <Layout title="planes">
   <main>
     <Navbar />
-    <h2>planes</h2>
+    <Pricing client:load />
+
+    <Footer />
   </main>
 </Layout>
