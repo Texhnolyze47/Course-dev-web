@@ -1,6 +1,5 @@
 import { FaRegularSquareCaretDown } from 'solid-icons/fa';
 import { FaRegularClock } from 'solid-icons/fa';
-import { FaSolidBriefcase } from 'solid-icons/fa';
 
 function CourseTopics() {
     return (
