@@ -1,52 +1,66 @@
 import { createSignal } from 'solid-js';
-import Card from './Card.jsx';
-import cardData from '../components/cardData.js';
 
+function CardList() {
+  const [selectedCategory, setSelectedCategory] = createSignal('all');
 
-export default function CardList() {
-  const [categoryFilter, setCategoryFilter] = createSignal('');
+  // Sample data
+  const items = [
+    { id: 1, name: 'Item 1', category: 'cat1' },
+    { id: 2, name: 'Item 2', category: 'cat2' },
+    { id: 3, name: 'Item 3', category: 'cat1' },
+    { id: 4, name: 'Item 4', category: 'cat3' },
+    { id: 5, name: 'Item 5', category: 'cat2' },
+  ];
 
-  function handleFilterChange(event) {
-    console.log('handleFilterChange called');
-    const newFilter = event.target.value;
-    setCategoryFilter(newFilter);
-  }
-
-  const filteredCards = cardData.filter((card) => {
-    console.log('categoryFilter:', categoryFilter());
-    console.log('card.category:', card.category);
-    console.log('filter called');
-
-    if (categoryFilter() === '') {
-      return true;
-    } else {
-      return card.category === categoryFilter();
-    }
-  });
+  const filteredItems = selectedCategory() === 'all'
+    ? items
+    : items.filter(item => item.category === selectedCategory());
 
   return (
-    <div className="p-4">
-      <select
-        className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-        value={categoryFilter()}
-        onChange={handleFilterChange}
-      >
-        <option value="">All</option>
-        <option value="category1">Category 1</option>
-        <option value="category2">Category 2</option>
-        <option value="category3">Category 3</option>
-      </select>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
-        {filteredCards.map((card) => (
-          <Card
-            key={card.id}
-            title={card.title}
-            description={card.description}
-            category={card.category}
-            imageUrl={card.imageUrl}
-          />
-        ))}
+    <div>
+      <div class="space-x-2">
+        <button
+          class="px-2 py-1 rounded bg-blue-500 text-white"
+          onClick={() => setSelectedCategory('all')}
+          classList={{ 'bg-blue-700': selectedCategory() === 'all' }}
+        >
+          All
+        </button>
+        <button
+          class="px-2 py-1 rounded bg-blue-500 text-white"
+          onClick={() => setSelectedCategory('cat1')}
+          classList={{ 'bg-blue-700': selectedCategory() === 'cat1' }}
+        >
+          Category 1
+        </button>
+        <button
+          class="px-2 py-1 rounded bg-blue-500 text-white"
+          onClick={() => setSelectedCategory('cat2')}
+          classList={{ 'bg-blue-700': selectedCategory() === 'cat2' }}
+        >
+          Category 2
+        </button>
+        <button
+          class="px-2 py-1 rounded bg-blue-500 text-white"
+          onClick={() => setSelectedCategory('cat3')}
+          classList={{ 'bg-blue-700': selectedCategory() === 'cat3' }}
+        >
+          Category 3
+        </button>
       </div>
+
+      <ul class="mt-4">
+        {filteredItems.map(item => (
+          <li key={item.id} class="py-2">
+            {item.name}
+            {console.log(item.name)}
+
+          </li>
+        ))}
+        {console.log(filteredItems)}
+      </ul>
     </div>
   );
 }
+
+export default CardList;

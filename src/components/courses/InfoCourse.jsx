@@ -1,9 +1,10 @@
 function InfoCourse() {
     return (
-        <div className="info-course">
+        <div>
+            <h1>Course Info</h1>
+
         </div>
-    )
-                    
+    );                    
 }
 
 export default InfoCourse;

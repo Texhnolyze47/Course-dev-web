@@ -1,10 +1,11 @@
 import { FaBrandsPython } from 'solid-icons/fa';
 import {FaSolidStar}  from 'solid-icons/fa';
 
+
 function CardCourse(){
     return(
         <div className="p-4 w-80 h-40">
-            <a href="../cursos/info-course.jsx">
+            <a href="./[course].astro">
             <img src="src/assets/images/courses/course_image_1.png" className="w-24"></img>
             <div className='flex flex-row'>
             <FaBrandsPython size={20} color="#308446" />
@@ -15,6 +16,7 @@ function CardCourse(){
             <h1>Card Course</h1>
             <p>Teacher</p>
             </a>
+            
         </div>
         )
 }

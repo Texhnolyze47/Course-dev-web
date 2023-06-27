@@ -1,9 +1,13 @@
-import Features from "./Features";
+import FeaturesInstructors from "./FeaturesInstructors.jsx";
+import FeaturesLiveClass from "./FeaturesLiveClass.jsx"
+import FeaturesSupport from "./FeaturesSupport.jsx"
+
 function FeaturesList() {
     return (
-        <div>
-            <Features/>
-            <Features/>
+        <div className="flex flex-row">
+            <FeaturesInstructors />
+            <FeaturesLiveClass />
+            <FeaturesSupport />
         </div>
     );
 

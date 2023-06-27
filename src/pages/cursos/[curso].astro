@@ -1,0 +1,16 @@
+---
+export function getStaticPaths() {
+  return [
+    {params: {course: 'java'}},
+    {params: {course: 'HTML'}},
+    {params: {course: 'jAvaScRiPt'}},
+  ];
+
+const { course } = Astro.params;
+---
+
+
+<div>Url para los coursos de , {course}!</div>
+
+
+

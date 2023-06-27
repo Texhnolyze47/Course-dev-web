@@ -2,13 +2,13 @@
 import Layout from '../layouts/Layout.astro'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.jsx';
-import GridCourses from '../components/courses/GridCourses.jsx';
+import Login from '../components/login/LoginCard.jsx';
 ---
 
-<Layout title="Cursos">
+<Layout title="Login">
     <main>
         <Navbar />
-        <GridCourses />
+        <Login class="place-self-auto" client:load />
         <Footer />
     </main>
 </Layout>

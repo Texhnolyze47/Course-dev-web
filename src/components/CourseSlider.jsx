@@ -1,91 +1,96 @@
 import { createSignal, onMount } from 'solid-js';
-import { For } from 'solid-js';
-import { Slider } from 'solid-slider';
+
 import Course_image_1 from '../assets/images/courses/course_image_1.jpg';
 import Course_image_2 from '../assets/images/courses/course_image_2.jpg';
 import Course_image_3 from '../assets/images/courses/course_image_3.jpg';
 import Course_image_4 from '../assets/images/courses/course_image_4.jpg';
 
 const CourseSlider = () => {
-  const [selectedCategory, setSelectedCategory] = createSignal('All');
-  const [courses, setCourses] = createSignal([]);
 
-  const categories = ['All', 'Category 1', 'Category 2'];
-  
-  const coursesInfo = () => {
-    return [
-      { title: 'Course 1', category: 'Category 1', image: Course_image_1, link: 'https://example.com/course1' },
-      { title: 'Course 2', category: 'Category 2', image: Course_image_2, link: 'https://example.com/course2' },
-      { title: 'Course 3', category: 'Category 1', image: Course_image_3, link: 'https://example.com/course3' },
-      { title: 'Course 4', category: 'Category 2', image: Course_image_4, link: 'https://example.com/course4' },
-    ];
-  };
+  const [activeTab, setActiveTab] = createSignal(0);
+  const tabs = [
+      {
+          name: 'Individual', content: (
+              <div class="grid gap-4 grid-cols-3 grid-rows-3">
+                  <div>
+                      <h1>Gratis</h1>
+                      <p>$0.00</p>
+                      <p>No time limit</p>
+                      <button>Sign up</button>
+                      <ul>
+                          <li>Acceso a los cursos gratis</li>
+                          <li>Plan de estudio persolizado</li>
+                          <li>Comunidad</li>
+                      </ul>
+                  </div>
+                  <div>
+                      <h1>Personal</h1>
+                      <p>$200.00</p> 
+                      <p>Por mes</p>
+                      <button>Empieza una prueba gratuita</button>
+                      <ul>
+                          <li>Acceso ilimitado a todos los cursos</li>
+                          <li>Plan de estudio persolizado</li>
+                          <li>Comunidad</li>
+                          <li>Certificado</li>
+                      </ul>
+                  </div>
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-  };
+              </div>
+          )
+      },
+      { name: 'Empresarial', content: (
+          <div class="grid gap-4 grid-cols-3 grid-rows-3">
+              <div>
+              <h1>Empresarial</h1>
+              <p>$300.00 por persona</p>
+              <p>Por mes</p>
+              <button>Empieza una prueba gratuita</button>
+              <ul>
+                  <li>Acceso ilimitado a todos los cursos</li>
+                  <li>Dashboard para ver el progreso de los empleados</li>
+                  <li>Una cuenta propietaria</li>
+                  <li>1+ de usuarios</li>
+                  <li>Plan de estudio persolizado</li>
+                  <li>Comunidad</li>
+                  <li>Certificado</li>
+              </ul>
 
-  const handleCategoryChange = (category) => {
-    console.log('Selected category:', category);
-    setSelectedCategory(category);
-    if (category === 'All') {
-        setCourses(coursesInfo());
-    } else {
-      const filteredCourses = courses().filter((course) => course.category === category);
-      console.log('Filtered courses:', filteredCourses);
-      if (filteredCourses.length > 0) {
-        setCourses(filteredCourses);
-      } else {
-        setCourses(null);
-      }
-    }
-  };
+              </div>
 
-  onMount(() => {
-    handleCategoryChange('All');
-    
-  });
+          </div>
+      ) },
+  ];
 
-  console.log('Courses:', courses());
+  function handleTabClick(index) {
+      console.log('handleTabClick called');
+
+      setActiveTab(index);
+  }
 
   return (
-    <div className="w-full">
-      <div className="flex justify-center space-x-4 mb-4">
-        {categories.map((category) => (
-          <button
-            className={`px-4 py-2 rounded-lg ${selectedCategory() === category ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'}`}
-            onClick={() => handleCategoryChange(category)}
-          >
-            {category}
-          </button>
-        ))}
+      <div>
+          <div class="border-b border-gray-200">
+              <nav class="-mb-px flex" aria-label="Tabs">
+                  {tabs.map((tab, index) => (
+                      <a
+                          href="#"
+                          class={`${activeTab() === index
+                              ? 'border-indigo-500 text-indigo-600'
+                              : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                              } whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm`}
+                          onClick={() => {
+                              console.log('onClick called');
+                              handleTabClick(index);
+                          }}
+                      >
+                          {tab.name}
+                      </a>
+                  ))}
+              </nav>
+          </div>
+          <div class="py-6">{tabs[activeTab()].content}</div>
       </div>
-      {courses() === null ? (
-        <p>Loading courses...</p>
-      ) : courses().length > 0 ? (
-        <Slider {...settings}>
-          <For each={courses()}>
-            {(course) => (
-              <a href={course.link} className="px-4">
-                <div className="relative">
-                  <img src={course.image} alt={course.title} className="w-full h-64 object-cover rounded-lg shadow-lg" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-75 rounded-b-lg">
-                    <h3 className="text-lg font-medium">{course.title}</h3>
-                    <p className="text-gray-500">{course.category}</p>
-                  </div>
-                </div>
-              </a>
-            )}
-          </For>
-        </Slider>
-      ) : (
-        <p>No courses found.</p>
-      )}
-    </div>
   );
 };
 
