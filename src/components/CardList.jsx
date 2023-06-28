@@ -45,7 +45,7 @@ function CardList() {
 
   return (
     <div>
-      <div class="space-x-2">
+      <div class="space-x-2 px-2 py-4">
         {categories.map((category) => (
           <button
             classList={{
@@ -59,7 +59,7 @@ function CardList() {
         ))}
       </div>
 
-      <div class="grid grid-cols-3 mt-4">
+      <div class="grid grid-cols-3 gap-4	px-4" >
         {filteredItems(items()).map((item) => (
           <Card
             title={item.name}

@@ -2,8 +2,8 @@
 export default function Card({ title, price, image, category }) {
 
   return (
-    <div class="flex flex-col bg-white rounded-lg shadow-md px-4">
-      <img class="h-48 object-cover" src={image} alt={title} />
+    <div class="flex flex-col bg-white round-lg shadow-md px-0 rounded-lg">
+      <img class="h-48 w-full object-cover" src={image} alt={title} />
       <div class="p-4 ">
         <div class="flex flex-col">
           <p class="mt-2 text-gray-600">{category}</p>
