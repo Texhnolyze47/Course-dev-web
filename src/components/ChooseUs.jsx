@@ -1,26 +1,36 @@
-import PointPlataform from './PointsPlataform'
-function Choose_us(){
-    return(
-        <div className="flex">
-            <div className='w-3/5 justify-center'>
-                <h1 className="text-5xl">Why Choose Us</h1>
-                <p className="text-xl">Our platform is designed to help you learn and grow.</p>
-                <img src="src/assets/images/landing-page/group-work-2.jpg" alt="" className="" />
-            </div>
-            <div className="w-2/5">
-                <div className="">
-                <p className="text-gray-500	">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Provident tenetur ad porro modi in illo distinctio perspiciatis similique soluta aperiam et, 
-                        eaque itaque voluptatibus, 
-                        cum quisquam ab eius obcaecati! Aliquam?</p>
-                <PointPlataform />
-                <PointPlataform />
-                <PointPlataform />
-                <PointPlataform />
-                </div>
-            </div>
+import PointPlataform from "./PointsPlataform.jsx";
+function Choose_us() {
+  return (
+    <div class="flex px-4">
+      <div class="w-3/5 justify-center">
+        <h1 class="text-5xl">Why Choose Us</h1>
+        <p class="text-xl">
+          Our platform is designed to help you learn and grow.
+        </p>
+        <img
+          class="w-2/3"
+          src="src/assets/images/landing-page/group-work-2.jpg"
+          alt=""
+        />
+      </div>
+      <div class="w-2/5">
+        <div class="flex flex-col">
+          <p class="text-gray-500	">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident
+            tenetur ad porro modi in illo distinctio perspiciatis similique
+            soluta aperiam et, eaque itaque voluptatibus, cum quisquam ab eius
+            obcaecati! Aliquam?
+          </p>
+          <div class="grid grid-cols-2 p-2">
+            <PointPlataform />
+            <PointPlataform />
+            <PointPlataform />
+            <PointPlataform />
+          </div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
 export default Choose_us;
