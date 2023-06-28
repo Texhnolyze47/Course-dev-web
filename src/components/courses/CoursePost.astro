@@ -1,0 +1,15 @@
+---
+const {title, url, author,description, students,rate} = Astro.props
+---
+
+<li class="px-0 bg-gray-50 m-10 ">
+    <a class="rounded-lg" href={url}>
+        <div class="flex flex-row ">
+            <p class="py-2 px-4">Numero de estudiantes: {students}</p>
+            <p class="px-4 self-center"> Calificaion {rate}</p>
+        </div>
+    <p class="bg-zinc-700 text-white py-1 px-6" >{title}</p>
+    <p class="py-1  px-4">{description}</p>
+    <p class="px-4">Proporcionado por {author}</p>
+    </a>
+</li>

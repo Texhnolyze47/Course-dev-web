@@ -13,7 +13,7 @@ export default function Card({ title, price, image, category }) {
         <div class="flex justify-between items-center mt-0">
           <p class="">$200.0</p>
           <button class="bg-stone-950 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Comienza
+            <a href="/cursos">Comieza</a>
           </button>
         </div>
       </div>

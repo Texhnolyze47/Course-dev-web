@@ -1,4 +1,15 @@
-## Introducción a Java
+---
+layout: ../../layouts/LayoutMarkdown.astro
+title: 'Mi cuarto post en el blog'
+pubDate: 2022-07-01
+description: 'Este es el primer post de mi nuevo blog Astro.'
+author: 'Astro alumno'
+image:
+    url: '../../images/post-4.jpg' 
+    alt: 'El logotipo de Astro con la palabra One.'
+tags: ["astro", "bloguear", "aprender en público"]
+
+---
 
 Java es un lenguaje de programación popular y versátil que ha ganado gran reconocimiento en el mundo del desarrollo de software. Creado por James Gosling y su equipo en Sun Microsystems en la década de 1990, Java ha evolucionado constantemente y se ha convertido en una herramienta fundamental en la industria de la programación.
 

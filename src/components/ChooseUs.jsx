@@ -3,10 +3,7 @@ function Choose_us() {
   return (
     <div class="flex px-4">
       <div class="w-3/5 justify-center">
-        <h1 class="text-5xl">Why Choose Us</h1>
-        <p class="text-xl">
-          Our platform is designed to help you learn and grow.
-        </p>
+        <h1 class="text-5xl pb-10">¿Por que escogernos?</h1>
         <img
           class="w-2/3"
           src="src/assets/images/landing-page/group-work-2.jpg"

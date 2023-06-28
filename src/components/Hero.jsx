@@ -2,7 +2,7 @@ function hero(){
     return (
       <header className="bg-zinc-200 flex p-20 ">
         <div>
-          <h1 className="text-5xl font-bold pb-6">
+          <h1 className="text-5xl font-bold pb-6 font-mono">
             ¿Cuál es su objetivo de aprendizaje?
           </h1>
           <p>
@@ -12,7 +12,7 @@ function hero(){
           </p>
 
           <button className="bg-stone-950 text-zinc-50 hover:bg-indigo-950 p-2 my-4">
-            Empieza aqui
+            <a href="/register">Empieza aqui</a>
           </button>
         </div>
         <img

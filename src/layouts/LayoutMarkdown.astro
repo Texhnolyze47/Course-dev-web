@@ -1,0 +1,24 @@
+---
+import Layout from "./Layout.astro";
+import NavBar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import "../assets/styles/Layout.css";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <NavBar />
+  <h1 class="font-mono text-3xl mt-8 ml-4">{frontmatter.title}</h1>
+  <p class="font-sans mt-4 ml-4">{frontmatter.pubDate.slice(0, 10)}</p>
+  <p class="font-sans mt-4 ml-4"><em>{frontmatter.description}</em></p>
+  <p class="mt-4 ml-4">Escrito por: {frontmatter.author}</p>
+  <img
+    src={frontmatter.image.url}
+    width="h-auto"
+    alt={frontmatter.image.alt}
+    class="p-4 m-auto"
+  />
+  <slot  />
+  <Footer />
+</Layout>

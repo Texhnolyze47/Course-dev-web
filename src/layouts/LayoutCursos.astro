@@ -1,0 +1,27 @@
+---
+import Layout from "./Layout.astro";
+import NavBar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import "../assets/styles/Layout.css";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <NavBar />
+  <p class="font-sans mt-4 mx-4">
+    Ultima actividad {frontmatter.pubDate.slice(0, 10)}
+  </p>
+  <h2 class="bg-black rounded-xl text-white w-12 text-center mx-4 my-6">
+    {frontmatter.track}
+  </h2>
+  <h1 class="font-mono text-3xl font-semibold">{frontmatter.title}</h1>
+  <div class="grid grid-cols-3">
+  <p class="px-4">Numero de estudiantes {frontmatter.students}</p>
+  <p>Calificacion {frontmatter.rate}</p>
+  <p class="">Proporcionado por: {frontmatter.author}</p>
+  </div>
+  <p class="font-sans m-4"><em>{frontmatter.description}</em></p>
+  <slot />
+  <Footer />
+</Layout>

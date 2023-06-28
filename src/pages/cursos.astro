@@ -1,14 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro'
+
+const AllCourses = await Astro.glob("../pages/cursos/*.md");
+import CoursePost from '../components/courses/CoursePost.astro';
+
 import Navbar from '../components/Navbar.astro'
-import Footer from '../components/Footer.jsx';
-import GridCourses from '../components/courses/GridCourses.jsx';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Cursos">
+<Layout title="Cursos" client:load>
     <main>
         <Navbar />
-        <GridCourses />
+        <h1 class="text-6xl mb-8">Rutas</h1>
+    <ul class="grid grid-cols-2 ">
+      {
+        AllCourses.map((post) => (
+          <CoursePost
+            url={post.url}
+            title={post.frontmatter.title}
+            author={post.frontmatter.author}
+            description={post.frontmatter.description}
+            students={post.frontmatter.students}
+            rate={post.frontmatter.rate}
+          />
+        ))
+      }
+    </ul>
         <Footer />
     </main>
 </Layout>

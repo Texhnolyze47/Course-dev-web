@@ -1,18 +1,63 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from "../layouts/Layout.astro";
 // Components
-import Navbar from '../components/Navbar.astro'
-import StudyPlanTitle from '../components/study_plan/StudyPlanTitle.jsx'
-import CourseTopic from '../components/study_plan/CourseTopics.jsx'
-import Footer from '../components/Footer';
+import Navbar from "../components/Navbar.astro";
+import StudyPlanTitle from "../components/study_plan/StudyPlanTitle.jsx";
+import CourseTopic from "../components/study_plan/CourseTopics.jsx";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Plan de estudios">
-    <main>
-        <Navbar />
-        <StudyPlanTitle client:load/>
-        <CourseTopic client:load/>
-        <Footer />
+  <main>
+    <Navbar />
+    <StudyPlanTitle client:load />
+    <CourseTopic
+      etapa={" Etapa 1/7: HTML, CSS y javascript"}
+      descripcion={"Aqui aprenderas los bases de la programacion web"}
+      tiempo={"2 Dias"}
+      client:load
+    />
+  <CourseTopic
+      etapa={" Etapa 2/7: UI/UX"}
+      descripcion={"Aqui aprenderas los bases de la programacion web"}
+      tiempo={"2 Dias"}
+      client:load
+    />
+      <CourseTopic
+      etapa={" Etapa 3/7: Frameworks de javascript"}
+      descripcion={"Aqui aprenderas los bases de la programacion web"}
+      tiempo={"2 Dias"}
+      client:load
+    />
+      <CourseTopic
+      etapa={" Etapa 4/7: Backend con Node.js"}
+      descripcion={"Aqui aprenderas los bases de la programacion web"}
+      tiempo={"2 Dias"}
+      client:load
+    />
+        
+      <CourseTopic
+      etapa={" Etapa 5/7: Bases de datos con MongoDB"}
+      descripcion={"Aqui aprenderas los bases de la programacion web"}
+      tiempo={"2 Dias"}
+      client:load
+    />
 
-    </main>
+        
+      <CourseTopic
+      etapa={" Etapa 6/7: Despliegue de aplicaciones web"}
+      descripcion={"Aqui aprenderas los bases de la programacion web"}
+      tiempo={"2 Dias"}
+      client:load
+    />
+
+   
+      <CourseTopic
+      etapa={" Etapa 7/7: Proyecto final"}
+      descripcion={"Aqui aprenderas los bases de la programacion web"}
+      tiempo={"2 Dias"}
+      client:load
+    />
+    <Footer />
+  </main>
 </Layout>

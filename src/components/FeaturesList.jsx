@@ -4,7 +4,7 @@ import FeaturesSupport from "./FeaturesSupport.jsx"
 
 function FeaturesList() {
     return (
-        <div className="flex flex-row px-6 pt-10">
+        <div className="flex flex-row px-6 py-16">
             <FeaturesInstructors />
             <FeaturesLiveClass />
             <FeaturesSupport />

@@ -1,0 +1,13 @@
+---
+const { title, url, image, author, description } = Astro.props;
+---
+
+<li class="grid grid-cols-2 gap-8 px-4">
+    <div>
+    <a class="bg-zinc-700 text-white py-1 px-4" href={url}>{title}</a>
+    <p class="py-2">{author}</p>
+    <p class="py-1">{description}</p>
+
+    </div>
+        <img src={image} alt={image.alt} />
+</li>

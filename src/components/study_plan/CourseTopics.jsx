@@ -1,25 +1,23 @@
 import { FaRegularSquareCaretDown } from 'solid-icons/fa';
 import { FaRegularClock } from 'solid-icons/fa';
 
-function CourseTopics() {
+function CourseTopics({etapa, descripcion, tiempo}) {
     return (
-        <div className="flex flex-col">
-            <div className='flex flex-row'>
-                <FaRegularSquareCaretDown className="self-left" />
-                <div className='flex flex-col'>
-                    <p className="text-xl font-bold">Etapa 1/7: HTML, CSS y javascript</p>
-                    <div className='flex flex-row'>
-                        <p>Descripcion de la etapa</p>
-                        <FaRegularClock />
-                        <p>Tiempo estimado</p>
-                    </div>
-                </div>
-                <button>Continuar</button>
-
+      <div class="flex  p-4 flex-col">
+        <div class="flex flex-row">
+          <FaRegularSquareCaretDown class="self-left " />
+          <div class="flex flex-col ">
+            <p class="text-xl font-bold">{etapa}</p>
+            <div class="flex flex-row items-center">
+              {descripcion}
+              <FaRegularClock class="mx-2" />
+              {tiempo}
             </div>
-
+          </div>
+          <button class="bg-black text-white p-2 ml-2"><a href="/cursos">Continuar</a></button>
         </div>
-    )
+      </div>
+    );
 }
 
 export default CourseTopics;

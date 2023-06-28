@@ -3,7 +3,7 @@ import Mentor from "./Mentor";
 function ListMentors() {
   return (
     <div class="flex flex-col">
-      <div class="flex flex-row py-2  flex-nowrap">
+      <div class="flex flex-row py-10  flex-nowrap">
         <h1 class="text-4xl	w-2/3 px-4">
           Conoce a nuestros mentores de alta calidad
         </h1>
@@ -14,7 +14,7 @@ function ListMentors() {
           similique aliquam, voluptates perferendis nihil?
         </p>
       </div>
-      <div class="flex flex-row">
+      <div class="flex flex-row py-10 ">
         <Mentor />
         <Mentor />
         <Mentor />

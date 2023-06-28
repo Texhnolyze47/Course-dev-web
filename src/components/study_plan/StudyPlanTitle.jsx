@@ -18,14 +18,14 @@ function StudyPlanTitle() {
   }, 2000);
 
   return (
-    <div className="flex p-4 flex-col">
-      <div className=" flex flex-row">
-        <h1 className="text-2xl">Plan de Estudios </h1>
-        <span className="pl-2 self-center">{" para " + course()}</span>
+    <div class="flex p-4 flex-col">
+      <div class=" flex flex-row">
+        <h1 class="text-2xl">Plan de Estudios </h1>
+        <span class="pl-2 self-center">{" para " + course()}</span>
       </div>
-      <div className="flex">
+      <div class="flex">
         <FaSolidDiagramProject className="self-center" />
-        <span>{number() + " proyecto completado, Estas trabajando en"} </span>
+        <span class="px-1">{number() + " proyecto completado, Estas trabajando en"} </span>
         <p>{project()}</p>
       </div>
     </div>
