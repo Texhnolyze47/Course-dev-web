@@ -5,7 +5,7 @@ pubDate: 2022-07-01
 description: 'Este es el primer post de mi nuevo blog Astro.'
 author: 'Astro alumno'
 image:
-    url: '../../images/post-6.jpg' 
+    url: '/images/post-6.jpg' 
     alt: 'El logotipo de Astro con la palabra One.'
 tags: ["astro", "bloguear", "aprender en público"]
 

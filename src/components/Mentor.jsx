@@ -4,7 +4,7 @@ function Mentor() {
       <div className="flex flex-col max-w-sm rounded overflow-hidden shadow-lg shadow-black-500/40	">
         <img
           className="self-center w-6/12	"
-          src="src\assets\images\landing-page\mentor-image.png"
+          src="src/assets/images/landing-page/mentor-image.png"
           alt="Mountain"
         ></img>
         <div className="px-6 py-4">
